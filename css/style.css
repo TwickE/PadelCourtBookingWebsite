@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box
+}
+
+body {
+    background-image: url("/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    max-height: 50vh;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 70px;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    margin: auto;
+}
+
+.btnEntrar {
+    background-color: #75fa96;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnEntrar:hover {
+    background-color: #5eeb7f;
+    outline: 3px solid #0d9930;
+}
+
+.sectionProcurar {
+    margin-top: 30vh !important;
+    width: 80%;
+    margin: auto;
+}
+
+.sectionProcurar h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    width: 100%;
+}
+
+.sectionProcurar input {
+    width: 100%;
+    height: 3.5rem;
+}
