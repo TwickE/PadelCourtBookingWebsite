@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("/background.png");
+    background-image: url("/background2.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,8 +71,31 @@ nav {
     text-shadow: 0 0 5px #000;
     width: 100%;
 }
-
-.sectionProcurar input {
+.pesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
+}
+
+.pesquisa input {
     height: 3.5rem;
+}
+
+#pesquisa {
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#data {
+    width: 15%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
 }
