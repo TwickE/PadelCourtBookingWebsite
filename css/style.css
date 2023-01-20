@@ -92,10 +92,25 @@ nav {
 }
 
 #data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     width: 15%;
     border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
     outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#data p {
+    margin: 0;
+}
+
+#data:hover {
+    background-color: #75fa96;
 }
