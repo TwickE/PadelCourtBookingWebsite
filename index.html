@@ -29,6 +29,32 @@
             <input id="pesquisa" type="text" placeholder="Procura por campos ou localidades">
             <button id="data" type="date"><i class="fa-solid fa-calendar-days"></i><p>Horários</p></button>
         </div>
+        <div class="container-pesquisa">
+            <!-- <div class="container-horarios">
+                <input id="inputData" type="date">
+            </div> -->
+            <div id="calendar">
+                <div id="calendar-header">
+                  <button id="prev-month">bef</button>
+                  <div id="month-year"></div>
+                  <button id="next-month">nex</button>
+                </div>
+                <table id="calendar-body">
+                  <thead>
+                    <tr>
+                      <th>2ª</th>
+                        <th>3ª</th>
+                        <th>4ª</th>
+                        <th>5ª</th>
+                        <th>6ª</th>
+                        <th>Sá</th>
+                        <th>Do</th>
+                    </tr>
+                  </thead>
+                  <tbody id="calendar-days"></tbody>
+                </table>
+              </div>              
+        </div>
     </section>
 </body>
 </html>
