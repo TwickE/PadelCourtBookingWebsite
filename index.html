@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2575fc" >
-    <!-- Bibliotecas CSS -->
-    <link rel="icon" type="image/png" href="/favicon.png"/> <!-- Remove /PlayfairCypher to inspect locally -->
-    <link rel="stylesheet" href="/css/animate.min.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <!-- Bibliotecas JS -->
-    <script src="https://kit.fontawesome.com/82445024cd.js" crossorigin="anonymous" defer></script>
-    <script src="/js/script.js" defer></script>
-    <title>Pádel Courts</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2575fc">
+  <!-- Bibliotecas CSS -->
+  <link rel="icon" type="image/png" href="/favicon.png" /> <!-- Remove /PlayfairCypher to inspect locally -->
+  <link rel="stylesheet" href="/css/animate.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Bibliotecas JS -->
+  <script src="https://kit.fontawesome.com/82445024cd.js" crossorigin="anonymous" defer></script>
+  <script src="/js/script.js" defer></script>
+  <title>Pádel Courts</title>
 </head>
+
 <body>
-    <!-- <img class="backgroundImage" src="/background.png" alt="Campo de Pádel"> -->
-    <nav>
-        <div class="logo">
-            <a href="/"><img src="favicon.png" alt="Pádel Courts"></a>
-            <p>Pádel Courts</p>
+  <nav>
+    <div class="logo">
+      <a href="/"><img src="favicon.png" alt="Pádel Courts"></a>
+      <p>Pádel Courts</p>
+    </div>
+    <button class="btnEntrar" href="#">Entrar</button>
+  </nav>
+  <section class="sectionProcurar">
+    <h1>Marca um campo ainda hoje.</h1>
+    <div class="pesquisa">
+      <input id="pesquisa" type="text" placeholder="Procura por campos ou localidades">
+      <button id="data" type="date">
+        <p>Horários / Filtros</p>
+      </button>
+    </div>
+    <div class="container-pesquisa">
+      <div class="container-dia">
+        <h3>Escolhe um dia</h3>
+      <div id="calendar">
+        <div id="calendar-header">
+          <button class="btn-month" id="prev-month"><i class="fa-solid fa-arrow-left"></i></button>
+          <div id="month-year"></div>
+          <button class="btn-month" id="next-month"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <button class="btnEntrar" href="#">Entrar</button>
-    </nav>
-    <section class="sectionProcurar">
-        <h1>Marca um campo ainda hoje.</h1>
-        <div class="pesquisa">
-            <input id="pesquisa" type="text" placeholder="Procura por campos ou localidades">
-            <button id="data" type="date"><i class="fa-solid fa-calendar-days"></i><p>Horários</p></button>
-        </div>
-        <div class="container-pesquisa">
-            <!-- <div class="container-horarios">
-                <input id="inputData" type="date">
-            </div> -->
-            <div id="calendar">
-                <div id="calendar-header">
-                  <button id="prev-month">bef</button>
-                  <div id="month-year"></div>
-                  <button id="next-month">nex</button>
-                </div>
-                <table id="calendar-body">
-                  <thead>
-                    <tr>
-                      <th>2ª</th>
-                        <th>3ª</th>
-                        <th>4ª</th>
-                        <th>5ª</th>
-                        <th>6ª</th>
-                        <th>Sá</th>
-                        <th>Do</th>
-                    </tr>
-                  </thead>
-                  <tbody id="calendar-days"></tbody>
-                </table>
-              </div>              
-        </div>
-    </section>
+        <table id="calendar-body">
+          <thead>
+            <tr>
+              <th>2ª</th>
+              <th>3ª</th>
+              <th>4ª</th>
+              <th>5ª</th>
+              <th>6ª</th>
+              <th>Sá</th>
+              <th>Do</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-days"></tbody>
+        </table>
+      </div>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>

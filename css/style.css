@@ -16,6 +16,9 @@ body {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -86,10 +89,9 @@ nav {
 #pesquisa {
     width: 80%;
     border: none;
-    border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
-    outline: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #data {
@@ -97,14 +99,14 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 15%;
+    width: 20%;
     border: none;
-    border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
     outline: none;
     padding-left: 20px;
     padding-right: 20px;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -120,24 +122,52 @@ nav {
     background-color: #75fa96;
 }
 
-.container-pesquisa {
+.container-dia {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.container-dia h3 {
+    margin-top: 0;
+}
+
+.container-pesquisa {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     width: 100%;
-    height: 500px;
+    padding: 40px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+.btn-month {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: auto;
+    background-color: transparent;
+    border: 1px solid #afa7a6;
+    cursor: pointer;
+}
 
+.btn-month:hover {
+    border: 1px solid #0d9930;
+}
 
+.btn-month:active {
+    background-color: #f4f4f4;
+}
 
+.selected {
+    background-color: #0d9930;
+    color: #fff;
+}
 
 #calendar {
     width: 300px;
-    margin: 0 auto;
 }
 
 #calendar-header {
@@ -156,7 +186,7 @@ nav {
     border-collapse: collapse;
 }
 
-#calendar-body th{
+#calendar-body th {
     width: 14.28%;
     text-align: center;
     padding: 10px;
@@ -167,13 +197,23 @@ nav {
     text-align: center;
     padding: 10px;
     border: 1px solid #afa7a6;
+    cursor: pointer;
 }
 
-#calendar-body td:hover {
+.hover {
     cursor: pointer;
     background-color: #75fa96;
 }
 
+#calendar-body td:active {
+    background-color: #0d9930;
+    color: #fff;
+}
+
 .past {
     color: #afa7a6;
+}
+
+td:not(.disabled):hover {
+    background-color: transparent;
 }
