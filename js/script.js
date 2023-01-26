@@ -1,3 +1,8 @@
+let data = [];
+let hora = 0;
+let horaAntiga = 0;
+let minuto = "";
+
 let date = new Date();
 let today = new Date();
 let currentMonth = date.getMonth();
@@ -73,6 +78,8 @@ function showCalendar(month, year) {
         cell.appendChild(cellText);
         cell.addEventListener("click", function () {
           selectDay.call(this, year, month);
+          data = [this.textContent, month + 1, year];
+          console.log(data);
         });
         cell.addEventListener("mouseover", function () {
           if (!this.classList.contains("selected")) {
@@ -103,4 +110,26 @@ function showCalendar(month, year) {
 
 
 
+document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
+  button.addEventListener('click', function() {
+    if(horaAntiga !== this.textContent) {
+      document.querySelector(".selected").classList.remove("selected");
+      this.classList.add("selected");
+    }else {
+      this.classList.remove("selected");
+    }
+    
+    hora = this.textContent;
+    horaAntiga = this.textContent;
+    console.log("hora: " + hora);
+  });
+});
 
+
+/* const btnHoraInicio = document.getElementsByClassName(".btn-horas-inicio");
+for (var i = 0; i < btnHoraInicio.length; i++) {
+  btnHoraInicio[i].addEventListener("click", function () {
+    hora = this.textContent;
+    console.log("texto " + hora);
+  });
+} */
