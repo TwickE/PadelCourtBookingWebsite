@@ -1,15 +1,20 @@
 let data = [];
 let horaInicio = 0;
 let horaInicioAntiga = 0;
-let minutoInicio = 0;
-let minutoInicioAntigo = 0;
 let horaFim = 0;
 let horaFimAntiga = 0;
-let minutoFim = 0;
-let minutoFimAntigo = 0;
+
 
 const diaSemanaFinal = document.getElementById('diaSemanaFinal');
+let diaPredefinido = new Date().getDate() + 1;
+let mesPredefinido = new Date().getMonth();
+let anoPredefinido = new Date().getFullYear();
+let combinacaoData = new Date(anoPredefinido, mesPredefinido, diaPredefinido);
+let str = combinacaoData.toLocaleString('pt-PT', {weekday: 'long'});
+let firstChar = str.charAt(0).toUpperCase();
+diaSemanaFinal.innerHTML = firstChar + str.slice(1);
 const dataFinal = document.getElementById('dataFinal');
+dataFinal.innerHTML = combinacaoData.toLocaleString('pt-PT', {day: 'numeric', month: 'long', year: 'numeric'});
 const horasFinal = document.getElementById('horasFinal');
 
 let date = new Date();
@@ -78,11 +83,16 @@ function showCalendar(month, year) {
         if (cellDate > today) {
           cell.classList.add("disabled");
         }
-        if (date2 === today.getUTCDate() && year === today.getUTCFullYear() && month === today.getUTCMonth()) {
-          cell.classList.add("today");
-        }
         if (date2 < today.getUTCDate() && month <= today.getUTCMonth() && year <= today.getUTCFullYear()) {
           cell.classList.add("past");
+        }
+        let diaHoje = new Date();
+        let dd = String(diaHoje.getDate()).padStart(2, '0');
+        dd++;
+        console.log(dd);
+        if(date2 === dd) {
+          console.log("diaHoje: " + dd);
+          cell.classList.add("selected");
         }
         cell.appendChild(cellText);
         cell.addEventListener("click", function () {
@@ -133,20 +143,12 @@ document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
     horaInicioAntiga = this;
     horaInicio = this.textContent;
     console.log("horaInicio: " + horaInicio);
-  });
-});
 
-document.querySelectorAll('.btn-min-inicio').forEach(function(button) {
-  button.addEventListener('click', function() {
-    this.classList.add('selected');
-    try {
-      minutoInicioAntigo.classList.remove('selected');
-    } catch (error) {
+    if(horaFim === 0){
+      horasFinal.innerHTML = horaInicio + ":00 - ...";
+    }else {
+      horasFinal.innerHTML = horaInicio + ":00 - " + horaFim + ":00";
     }
-
-    minutoInicioAntigo = this;
-    minutoInicio = this.textContent;
-    console.log("minutoInicio: " + minutoInicio);
   });
 });
 
@@ -161,19 +163,11 @@ document.querySelectorAll('.btn-horas-fim').forEach(function(button) {
     horaFimAntiga = this;
     horaFim = this.textContent;
     console.log("horaFim: " + horaFim);
-  });
-});
 
-document.querySelectorAll('.btn-min-fim').forEach(function(button) {
-  button.addEventListener('click', function() {
-    this.classList.add('selected');
-    try {
-      minutoFimAntigo.classList.remove('selected');
-    } catch (error) {
+    if(horaInicio === 0){
+      horasFinal.innerHTML = "... - " + horaFim + ":00";
+    }else {
+      horasFinal.innerHTML = horaInicio + ":00 - " + horaFim + ":00";
     }
-
-    minutoFimAntigo = this;
-    minutoFim = this.textContent;
-    console.log("minutoFim: " + minutoFim);
   });
 });
