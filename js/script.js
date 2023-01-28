@@ -1,7 +1,12 @@
 let data = [];
-let hora = 0;
-let horaAntiga = 0;
-let minuto = "";
+let horaInicio = 0;
+let horaInicioAntiga = 0;
+let minutoInicio = 0;
+let minutoInicioAntigo = 0;
+let horaFim = 0;
+let horaFimAntiga = 0;
+let minutoFim = 0;
+let minutoFimAntigo = 0;
 
 let date = new Date();
 let today = new Date();
@@ -108,19 +113,58 @@ function showCalendar(month, year) {
   }
 }
 
-
-
 document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
   button.addEventListener('click', function() {
-    if(horaAntiga !== this.textContent) {
-      document.querySelector(".selected").classList.remove("selected");
-      this.classList.add("selected");
-    }else {
-      this.classList.remove("selected");
+    this.classList.add('selected');
+    try {
+      horaInicioAntiga.classList.remove('selected');
+    } catch (error) {
     }
-    
-    hora = this.textContent;
-    horaAntiga = this.textContent;
-    console.log("hora: " + hora);
+
+    horaInicioAntiga = this;
+    horaInicio = this.textContent;
+    console.log("horaInicio: " + horaInicio);
+  });
+});
+
+document.querySelectorAll('.btn-min-inicio').forEach(function(button) {
+  button.addEventListener('click', function() {
+    this.classList.add('selected');
+    try {
+      minutoInicioAntigo.classList.remove('selected');
+    } catch (error) {
+    }
+
+    minutoInicioAntigo = this;
+    minutoInicio = this.textContent;
+    console.log("minutoInicio: " + minutoInicio);
+  });
+});
+
+document.querySelectorAll('.btn-horas-fim').forEach(function(button) {
+  button.addEventListener('click', function() {
+    this.classList.add('selected');
+    try {
+      horaFimAntiga.classList.remove('selected');
+    } catch (error) {
+    }
+
+    horaFimAntiga = this;
+    horaFim = this.textContent;
+    console.log("horaFim: " + horaFim);
+  });
+});
+
+document.querySelectorAll('.btn-min-fim').forEach(function(button) {
+  button.addEventListener('click', function() {
+    this.classList.add('selected');
+    try {
+      minutoFimAntigo.classList.remove('selected');
+    } catch (error) {
+    }
+
+    minutoFimAntigo = this;
+    minutoFim = this.textContent;
+    console.log("minutoFim: " + minutoFim);
   });
 });

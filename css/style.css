@@ -137,11 +137,19 @@ nav {
     display: flex;
     flex-direction: column;
     padding-left: 40px;
+    padding-right: 40px;
+    border-right: 1px solid #afa7a6;
 }
 
 .container-hora h3 {
     margin-top: 0;
 }
+
+.container-2horas {
+    display: flex;
+    flex-direction: row;
+}
+
 
 .container-hora-inicio p {
     margin-top: 0;
@@ -186,11 +194,6 @@ nav {
     background-color: #75fa96;
 }
 
-/* .hora button:focus {
-    background-color: #0d9930;
-    color: #fff;
-} */
-
 .container-pesquisa {
     display: flex;
     flex-direction: row;
@@ -222,7 +225,7 @@ nav {
 }
 
 .selected {
-    background-color: #0d9930;
+    background-color: #0d9930 !important;
     color: #fff;
 }
 
@@ -271,4 +274,16 @@ nav {
 
 td:not(.disabled):hover {
     background-color: transparent;
+}
+
+.container-resultado {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-resultado p {
+    margin: 0;
 }
