@@ -8,6 +8,10 @@ let horaFimAntiga = 0;
 let minutoFim = 0;
 let minutoFimAntigo = 0;
 
+const diaSemanaFinal = document.getElementById('diaSemanaFinal');
+const dataFinal = document.getElementById('dataFinal');
+const horasFinal = document.getElementById('horasFinal');
+
 let date = new Date();
 let today = new Date();
 let currentMonth = date.getMonth();
@@ -84,7 +88,12 @@ function showCalendar(month, year) {
         cell.addEventListener("click", function () {
           selectDay.call(this, year, month);
           data = [this.textContent, month + 1, year];
-          console.log(data);
+          let date = new Date(data[2], data[1] - 1, data[0]);
+          let str = date.toLocaleString('pt-PT', {weekday: 'long'});
+          let firstChar = str.charAt(0).toUpperCase();
+          diaSemanaFinal.innerHTML = firstChar + str.slice(1);
+          dataFinal.innerHTML = date.toLocaleString('pt-PT', {day: 'numeric', month: 'long', year: 'numeric'});
+          console.log(dataFinal.innerHTML);
         });
         cell.addEventListener("mouseover", function () {
           if (!this.classList.contains("selected")) {
