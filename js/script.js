@@ -124,12 +124,3 @@ document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
     console.log("hora: " + hora);
   });
 });
-
-
-/* const btnHoraInicio = document.getElementsByClassName(".btn-horas-inicio");
-for (var i = 0; i < btnHoraInicio.length; i++) {
-  btnHoraInicio[i].addEventListener("click", function () {
-    hora = this.textContent;
-    console.log("texto " + hora);
-  });
-} */
