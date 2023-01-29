@@ -16,6 +16,9 @@ diaSemanaFinal.innerHTML = firstChar + str.slice(1);
 const dataFinal = document.getElementById('dataFinal');
 dataFinal.innerHTML = combinacaoData.toLocaleString('pt-PT', {day: 'numeric', month: 'long', year: 'numeric'});
 const horasFinal = document.getElementById('horasFinal');
+const btnHorasFim13 = document.getElementById('btn-horas-fim-13');
+const btnHorasInicio12 = document.getElementById('btn-horas-inicio-12');
+const btnData = document.getElementById('data');
 
 let date = new Date();
 let today = new Date();
@@ -134,6 +137,10 @@ function showCalendar(month, year) {
 
 document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
   button.addEventListener('click', function() {
+    if(btnHorasInicio12.classList.contains('selected')){
+      btnHorasInicio12.classList.remove('selected');
+    }
+
     this.classList.add('selected');
     try {
       horaInicioAntiga.classList.remove('selected');
@@ -154,6 +161,10 @@ document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
 
 document.querySelectorAll('.btn-horas-fim').forEach(function(button) {
   button.addEventListener('click', function() {
+    if(btnHorasFim13.classList.contains('selected')){
+      btnHorasFim13.classList.remove('selected');
+    }
+
     this.classList.add('selected');
     try {
       horaFimAntiga.classList.remove('selected');
@@ -170,4 +181,26 @@ document.querySelectorAll('.btn-horas-fim').forEach(function(button) {
       horasFinal.innerHTML = horaInicio + ":00 - " + horaFim + ":00";
     }
   });
+});
+
+btnData.addEventListener('click', function() {
+  const tabPesquisa = document.getElementById('container-pesquisa');
+
+  if(window.getComputedStyle(tabPesquisa).display === 'none'){
+    tabPesquisa.setAttribute('style', 'display: flex;');
+    btnData.style.backgroundColor = "#75fa96";
+  }else {
+    tabPesquisa.setAttribute('style', 'display: none;');
+    btnData.style.backgroundColor = "#fff";
+  }
+});
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 50) {
+    navbar.style.backgroundColor = 'rgba(62, 184, 93, 1)';
+  } else {
+    navbar.style.backgroundColor = 'transparent';
+  }
 });

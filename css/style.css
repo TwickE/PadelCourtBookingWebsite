@@ -15,7 +15,7 @@ body {
     margin: 0;
 }
 
-nav {
+#navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -24,6 +24,7 @@ nav {
     justify-content: space-between;
     max-height: 70px;
     padding: 10px;
+    transition: background-color 0.5s ease;
 }
 
 .logo {
@@ -91,7 +92,6 @@ nav {
     border: none;
     padding: 10px;
     font-size: 1rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #data {
@@ -101,6 +101,7 @@ nav {
     align-items: center;
     width: 20%;
     border: none;
+    border-left: 1px solid #afa7a6;
     padding: 10px;
     font-size: 1rem;
     outline: none;
@@ -110,16 +111,12 @@ nav {
     cursor: pointer;
 }
 
-#data p {
-    margin: 0;
-}
-
 #data:hover {
     background-color: #75fa96;
 }
 
-#data:focus {
-    background-color: #75fa96;
+#data p {
+    margin: 0;
 }
 
 .container-dia {
@@ -202,8 +199,8 @@ nav {
     background-color: #75fa96;
 }
 
-.container-pesquisa {
-    display: flex;
+#container-pesquisa {
+    display: none;
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
