@@ -397,3 +397,19 @@ h2 {
     font-weight: bold;
     color: #75fa96;
 }
+
+#nomeCampo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#localizacaoCampo {
+    font-size: 15px;
+    color: #afa7a6;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
