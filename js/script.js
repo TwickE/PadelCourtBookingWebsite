@@ -204,3 +204,41 @@ window.addEventListener('scroll', () => {
     navbar.style.backgroundColor = 'transparent';
   }
 });
+
+const campos = [
+  {
+    id: 1,
+    titulo:"Campo 1",
+    foto: "campos/campo1.jpg",
+    preco: 4.50,
+    loacalizacao: "Rua do Campo 1",
+    avaliacoes: 4.5,
+  },
+
+  {
+    id: 2,
+    titulo:"Campo 2",
+    foto: "campos/campo2.jpg",
+    preco: 4.50,
+    loacalizacao: "Rua do Campo 2",
+    avaliacoes: 4.5,
+  },
+
+  {
+    id: 3,
+    titulo:"Campo 3",
+    foto: "campos/campo3.jpg",
+    preco: 4.50,
+    loacalizacao: "Rua do Campo 3",
+    avaliacoes: 4.5,
+  },
+
+  {
+    id: 4,
+    titulo:"Campo 4",
+    foto: "campos/campo4.jpg",
+    preco: 4.50,
+    loacalizacao: "Rua do Campo 4",
+    avaliacoes: 4.5,
+  }
+];

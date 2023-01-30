@@ -10,8 +10,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 50vh;
-    max-height: 50vh;
+    max-height: 1vh;
     margin: 0;
 }
 
