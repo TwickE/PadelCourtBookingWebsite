@@ -205,7 +205,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-const campos = [
+let campos = [
   {
     id: 1,
     titulo:"Casas do Telhado",
@@ -299,31 +299,35 @@ const campos = [
 
 const sectionCampos = document.getElementById('section-campos');
 
-campos.forEach(campo => {
-  const childDiv = document.createElement("div");
-  childDiv.classList.add("campo");
-  childDiv.innerHTML = `
-    <img src="${campo.foto}" alt="imagem do campo">
-    <div class="container-preco-campo">
-      <p>DESDE</p>
-      <div class="container-preco">
-        <span class="valor1">${campo.preco1}</span>
-        <div class="conatiner-preco-2">
-          <span class="valor2">€</span>
-          <span class="valor2">,${campo.preco2}</span>
+function getCampos() {
+  sectionCampos.innerHTML = "";
+
+  campos.forEach(campo => {
+    const childDiv = document.createElement("div");
+    childDiv.classList.add("campo");
+    childDiv.innerHTML = `
+      <img src="${campo.foto}" alt="imagem do campo">
+      <div class="container-preco-campo">
+        <p>DESDE</p>
+        <div class="container-preco">
+          <span class="valor1">${campo.preco1}</span>
+          <div class="conatiner-preco-2">
+            <span class="valor2">€</span>
+            <span class="valor2">,${campo.preco2}</span>
+          </div>
         </div>
       </div>
-    </div>
-    <p id="nomeCampo">${campo.titulo}</p>
-    <p id="localizacaoCampo">${campo.loacalizacao}</p>
-    <div class="container-estrelas">
-      ${numeroEstrelas(campo.avaliacoes)}
-    </div>
-  `;
-  sectionCampos.appendChild(childDiv);
-});
+      <p id="nomeCampo">${campo.titulo}</p>
+      <p id="localizacaoCampo">${campo.loacalizacao}</p>
+      <div class="container-estrelas">
+        ${numeroEstrelas(campo.avaliacoes)}
+      </div>
+    `;
+    sectionCampos.appendChild(childDiv);
+  });
+}
 
-function numeroEstrelas(numero){
+function numeroEstrelas(numero) {
   if(Number.isInteger(numero)) {
     return `${'<i class="fa-solid fa-star"></i>'.repeat(numero)}`;
   }else {
@@ -331,3 +335,15 @@ function numeroEstrelas(numero){
     <i class="fa-solid fa-star-half"></i>`;
   }
 }
+
+getCampos();
+
+const btnAplicar = document.getElementById('btnAplicar');
+
+btnAplicar.addEventListener('click', () => {
+  campos = campos.sort(() => Math.random() - 0.5)
+  getCampos();
+
+  const tabPesquisa = document.getElementById('container-pesquisa');
+  tabPesquisa.setAttribute('style', 'display: none;');
+});

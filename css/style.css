@@ -315,12 +315,17 @@ td:not(.disabled):hover {
     width: 80%;
     height: 3rem;
     border: none;
-    background-color: #0d9930;
-    color: #fff;
+    background-color: #75fa96;
+    color: #111;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     margin-top: 50px;
+}
+
+.container-resultado button:hover {
+    outline: 3px solid #0d9930;
+    background-color: #5eeb7f;
 }
 
 h2 {
@@ -348,6 +353,7 @@ h2 {
     flex-direction: column;
     margin-bottom: 3rem;
     position: relative;
+    cursor: pointer;
 }
 
 .campo img {
