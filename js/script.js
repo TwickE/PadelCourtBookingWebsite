@@ -261,7 +261,7 @@ const campos = [
     titulo:"Jardim Panorâmico do Lido",
     foto: "campos/campo6.jpeg",
     preco1: 4,
-    preco2: 00,
+    preco2: 30,
     loacalizacao: "Funchal, Madeira",
     avaliacoes: 3.5,
   },
@@ -297,21 +297,6 @@ const campos = [
   },
 ];
 
-
-
-
-/* const parentDiv = document.getElementById("parentDiv");
-const data = [{id: 1, name: "John"}, {id: 2, name: "Jane"}];
-
-data.forEach(item => {
-  const childDiv = document.createElement("div");
-  childDiv.innerHTML = `<p>ID: ${item.id}</p><p>Name: ${item.name}</p>`;
-  parentDiv.appendChild(childDiv);
-}); */
-
-
-
-
 const sectionCampos = document.getElementById('section-campos');
 
 campos.forEach(campo => {
@@ -332,43 +317,17 @@ campos.forEach(campo => {
     <p id="nomeCampo">${campo.titulo}</p>
     <p id="localizacaoCampo">${campo.loacalizacao}</p>
     <div class="container-estrelas">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
+      ${numeroEstrelas(campo.avaliacoes)}
     </div>
   `;
   sectionCampos.appendChild(childDiv);
 });
 
-
-
-
-/* sectionCampos.innerHTML = campos.forEach((campo, index) => {
-  console.log(campo);
-  return `
-  <div class="campo">
-  <img src="${campo.foto}" alt="imagem do campo">
-  <div class="container-preco-campo">
-    <p>DESDE</p>
-    <div class="container-preco">
-      <span class="valor1">${campo.preco1}</span>
-      <div class="conatiner-preco-2">
-        <span class="valor2">€</span>
-        <span class="valor2">,${campo.preco2}</span>
-      </div>
-    </div>
-  </div>
-  <p id="nomeCampo">${campo.titulo}</p>
-  <p id="localizacaoCampo">${campo.loacalizacao}</p>
-  <div class="container-estrelas">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-  </div>
-</div>
-  `;
-}); */
+function numeroEstrelas(numero){
+  if(Number.isInteger(numero)) {
+    return `${'<i class="fa-solid fa-star"></i>'.repeat(numero)}`;
+  }else {
+    return `${'<i class="fa-solid fa-star"></i>'.repeat(numero)}
+    <i class="fa-solid fa-star-half"></i>`;
+  }
+}
