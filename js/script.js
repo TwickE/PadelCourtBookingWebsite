@@ -208,37 +208,167 @@ window.addEventListener('scroll', () => {
 const campos = [
   {
     id: 1,
-    titulo:"Campo 1",
-    foto: "campos/campo1.jpg",
-    preco: 4.50,
-    loacalizacao: "Rua do Campo 1",
-    avaliacoes: 4.5,
+    titulo:"Casas do Telhado",
+    foto: "campos/campo1.jpeg",
+    preco1: 4,
+    preco2: 50,
+    loacalizacao: "Castelões, Penafiel",
+    avaliacoes: 5,
   },
 
   {
     id: 2,
-    titulo:"Campo 2",
-    foto: "campos/campo2.jpg",
-    preco: 4.50,
-    loacalizacao: "Rua do Campo 2",
+    titulo:"Club Sport Marítimo",
+    foto: "campos/campo2.jpeg",
+    preco1: 3,
+    preco2: 80,
+    loacalizacao: "Funchal, Madeira",
     avaliacoes: 4.5,
   },
 
   {
     id: 3,
-    titulo:"Campo 3",
-    foto: "campos/campo3.jpg",
-    preco: 4.50,
-    loacalizacao: "Rua do Campo 3",
-    avaliacoes: 4.5,
+    titulo:"Clube Vila Rosa",
+    foto: "campos/campo3.jpeg",
+    preco1: 3,
+    preco2: 40,
+    loacalizacao: "Portimão, Algarve",
+    avaliacoes: 4,
   },
 
   {
     id: 4,
-    titulo:"Campo 4",
-    foto: "campos/campo4.jpg",
-    preco: 4.50,
-    loacalizacao: "Rua do Campo 4",
+    titulo:"GR Padel Maristas",
+    foto: "campos/campo4.jpeg",
+    preco1: 6,
+    preco2: 50,
+    loacalizacao: "Carcavelo, Cascais",
     avaliacoes: 4.5,
-  }
+  },
+
+  {
+    id: 5,
+    titulo:"Herdade da Cortesia",
+    foto: "campos/campo5.jpeg",
+    preco1: 5,
+    preco2: 20,
+    loacalizacao: "Avis, Portalegre",
+    avaliacoes: 4.5,
+  },
+
+  {
+    id: 6,
+    titulo:"Jardim Panorâmico do Lido",
+    foto: "campos/campo6.jpeg",
+    preco1: 4,
+    preco2: 00,
+    loacalizacao: "Funchal, Madeira",
+    avaliacoes: 3.5,
+  },
+
+  {
+    id: 7,
+    titulo:"Monte Xisto Hotel Rural",
+    foto: "campos/campo7.jpeg",
+    preco1: 6,
+    preco2: 50,
+    loacalizacao: "Santiago do Cacém, Alentejo",
+    avaliacoes: 5,
+  },
+
+  {
+    id: 8,
+    titulo:"Oeste Padel",
+    foto: "campos/campo8.jpeg",
+    preco1: 5,
+    preco2: 10,
+    loacalizacao: "Torres Vedras",
+    avaliacoes: 3,
+  },
+
+  {
+    id: 9,
+    titulo:"Ohai Nazaré ",
+    foto: "campos/campo9.jpeg",
+    preco1: 8,
+    preco2: 10,
+    loacalizacao: "Nazaré, Leiria",
+    avaliacoes: 5,
+  },
 ];
+
+
+
+
+/* const parentDiv = document.getElementById("parentDiv");
+const data = [{id: 1, name: "John"}, {id: 2, name: "Jane"}];
+
+data.forEach(item => {
+  const childDiv = document.createElement("div");
+  childDiv.innerHTML = `<p>ID: ${item.id}</p><p>Name: ${item.name}</p>`;
+  parentDiv.appendChild(childDiv);
+}); */
+
+
+
+
+const sectionCampos = document.getElementById('section-campos');
+
+campos.forEach(campo => {
+  const childDiv = document.createElement("div");
+  childDiv.classList.add("campo");
+  childDiv.innerHTML = `
+    <img src="${campo.foto}" alt="imagem do campo">
+    <div class="container-preco-campo">
+      <p>DESDE</p>
+      <div class="container-preco">
+        <span class="valor1">${campo.preco1}</span>
+        <div class="conatiner-preco-2">
+          <span class="valor2">€</span>
+          <span class="valor2">,${campo.preco2}</span>
+        </div>
+      </div>
+    </div>
+    <p id="nomeCampo">${campo.titulo}</p>
+    <p id="localizacaoCampo">${campo.loacalizacao}</p>
+    <div class="container-estrelas">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+  `;
+  sectionCampos.appendChild(childDiv);
+});
+
+
+
+
+/* sectionCampos.innerHTML = campos.forEach((campo, index) => {
+  console.log(campo);
+  return `
+  <div class="campo">
+  <img src="${campo.foto}" alt="imagem do campo">
+  <div class="container-preco-campo">
+    <p>DESDE</p>
+    <div class="container-preco">
+      <span class="valor1">${campo.preco1}</span>
+      <div class="conatiner-preco-2">
+        <span class="valor2">€</span>
+        <span class="valor2">,${campo.preco2}</span>
+      </div>
+    </div>
+  </div>
+  <p id="nomeCampo">${campo.titulo}</p>
+  <p id="localizacaoCampo">${campo.loacalizacao}</p>
+  <div class="container-estrelas">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+  </div>
+</div>
+  `;
+}); */
