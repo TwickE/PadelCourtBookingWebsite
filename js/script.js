@@ -137,13 +137,13 @@ function showCalendar(month, year) {
 
 document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
   button.addEventListener('click', function() {
-    if(btnHorasInicio12.classList.contains('selected')){
-      btnHorasInicio12.classList.remove('selected');
+    if(btnHorasInicio12.classList.contains('selected2')){
+      btnHorasInicio12.classList.remove('selected2');
     }
 
-    this.classList.add('selected');
+    this.classList.add('selected2');
     try {
-      horaInicioAntiga.classList.remove('selected');
+      horaInicioAntiga.classList.remove('selected2');
     } catch (error) {
     }
 
@@ -161,13 +161,13 @@ document.querySelectorAll('.btn-horas-inicio').forEach(function(button) {
 
 document.querySelectorAll('.btn-horas-fim').forEach(function(button) {
   button.addEventListener('click', function() {
-    if(btnHorasFim13.classList.contains('selected')){
-      btnHorasFim13.classList.remove('selected');
+    if(btnHorasFim13.classList.contains('selected2')){
+      btnHorasFim13.classList.remove('selected2');
     }
 
-    this.classList.add('selected');
+    this.classList.add('selected2');
     try {
-      horaFimAntiga.classList.remove('selected');
+      horaFimAntiga.classList.remove('selected2');
     } catch (error) {
     }
 

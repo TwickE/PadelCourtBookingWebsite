@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("/PadelCourtBookingWebsite/background.webp");
+    background-image: url("/PadelCourtBookingWebsite/background.webp"); /* Remove /PadelCourtBookingWebsite to inspect locally */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -230,6 +230,11 @@ body {
 }
 
 .selected {
+    background-color: #0d9930 !important;
+    color: #fff;
+}
+
+.selected2 {
     background-color: #0d9930 !important;
     color: #fff;
 }
