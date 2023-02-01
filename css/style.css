@@ -363,6 +363,7 @@ h2 {
 
 .campo img {
     max-height: 230px;
+    object-fit: cover;
 }
 
 .container-preco-campo {
@@ -424,4 +425,146 @@ h2 {
     margin: 0;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        background-image: url("/PadelCourtBookingWebsite/background-mobile.png"); /* Remove /PadelCourtBookingWebsite to inspect locally */
+        background-size: cover;
+    }
+
+    #pesquisa {
+        width: 70%;
+    }
+    
+    #data {
+        width: 30%;
+    }
+
+    #calendar {
+        margin: auto;
+    }
+
+    .campo {
+        width: 45%;
+    }
+
+    .sectionProcurar {
+        margin-top: 20vh !important;
+        width: 90%;
+    }
+
+    .sectionProcurar h1 {
+        font-size: 1.7rem;
+    }
+
+
+    #container-pesquisa {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-dia {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .container-dia h3 {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .container-hora {
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        border-right: none;
+    }
+    
+    .container-hora h3 {
+        margin-top: 1rem;
+    }
+
+    .hora {
+        border-radius: 5px;
+    }
+
+    .container-resultado {
+        margin-top: 2rem;
+    }
+
+    .container-resultado-inner {
+        border-left: none;
+    }
+
+    .container-resultado-inner p{
+        text-align: center;
+    }
+
+    .container-resultado button {
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    h2 {
+        width: 90%;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-campos {
+        width: 90%;
+    }
+
+    .container-informacoes-campo{
+        background-color: #fff;
+        padding-left: 10px;
+    }
+
+
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-image: url("/PadelCourtBookingWebsite/background-mobile.png"); /* Remove /PadelCourtBookingWebsite to inspect locally */
+        background-size: auto;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .pesquisa {
+        flex-direction: column;
+    }
+    
+    #pesquisa {
+        width: 100%;
+    }
+    
+    #data {
+        width: 100%;
+        height: 3.5rem;
+        border: none;
+        margin-top: 1rem;
+    }
+
+    #container-pesquisa {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .section-campos {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .container-informacoes-campo{
+        padding-left: 0;
+    }
 }

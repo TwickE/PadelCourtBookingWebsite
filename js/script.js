@@ -317,10 +317,12 @@ function getCampos() {
           </div>
         </div>
       </div>
-      <p id="nomeCampo">${campo.titulo}</p>
-      <p id="localizacaoCampo">${campo.loacalizacao}</p>
-      <div class="container-estrelas">
-        ${numeroEstrelas(campo.avaliacoes)}
+      <div class="container-informacoes-campo">
+        <p id="nomeCampo">${campo.titulo}</p>
+        <p id="localizacaoCampo">${campo.loacalizacao}</p>
+        <div class="container-estrelas">
+          ${numeroEstrelas(campo.avaliacoes)}
+        </div>
       </div>
     `;
     sectionCampos.appendChild(childDiv);
